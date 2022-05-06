@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/*finds number between 0 and max<=difficulty*RAND_MAX/10*/
+/*finds number between 0 and max<=difficulty*(RAND_MAX-500)/10+500*/
 int ranNumFinder(int difficulty){
   srand((int)time(0));
   int userNum=-1;
-  int max=rand()%(difficulty*((RAND_MAX-500)/10000)+500);
+  int max=rand()%(difficulty*((RAND_MAX-500)/10)+500);
   while(!(max>=userNum && userNum>=0)){
     printf("Pick a number between 0 and %d (inclusive)",max);
     scanf("%d",&userNum);
